@@ -1,0 +1,466 @@
+{% extends "layouts/candidate-base.html" %} {% block title %} My Dashboard
+{% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+	<div class="pcoded-content">
+		<!-- [ breadcrumb ] start -->
+		<div class="page-header">
+			<div class="page-block">
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<div class="page-header-title">
+							<h5 class="m-b-10">My Dashboard</h5>
+						</div>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="dashboard"><i
+									class="feather icon-home"></i></a></li>
+							<li class="breadcrumb-item"><a href="#!">My Dashboard</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- [ breadcrumb ] end -->
+		<!-- [ Main Content ] start -->
+		<div class="row">
+			<!-- [ dashboard ] start -->
+			<!-- Candidate overview start -->
+			<div class="col-lg-12">
+				<div class="card table-card">
+					<div class="card-header" >
+						<h5  style="text-transform: uppercase;">Overall Performance</h5>
+						<div class="card-header-right">
+							<div class="btn-group card-option">
+								<button type="button" class="btn dropdown-toggle"
+									data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">
+									<i class="feather icon-more-horizontal"></i>
+								</button>
+								<ul
+									class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+									<li class="dropdown-item full-card"><a href="#!"><span><i
+												class="feather icon-maximize"></i> maximize</span><span
+											style="display: none"><i class="feather icon-minimize"></i>
+												Restore</span></a></li>
+									<li class="dropdown-item minimize-card"><a href="#!"><span><i
+												class="feather icon-minus"></i> collapse</span><span
+											style="display: none"><i class="feather icon-plus"></i>
+												expand</span></a></li>
+									<!--  <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+                                         <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li> -->
+								</ul>
+							</div>
+						</div>
+						<!-- <ul class="nav nav-pills nav-fill mt-3 border-bottom pb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="feather icon-film m-r-5"></i> Entertainment</a>
+                                </li>
+                               <li class="nav-item">
+                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="feather icon-file-text m-r-5"></i> CMS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="feather icon-mail m-r-5"></i> Mail</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-news-tab" data-toggle="pill" href="#pills-news" role="tab" aria-controls="pills-news" aria-selected="false"><i class="feather icon-monitor m-r-5"></i> Newslatter</a>
+                                </li> 
+                            </ul>-->
+					</div>
+					<div class="card-body p-0">
+						<div class="tab-content" id="pills-tabContent">
+							<div class="tab-pane fade show active" id="pills-home"
+								role="tabpanel" aria-labelledby="pills-home-tab">
+								<div class="table-responsive">
+									<div class="customer-scroll"
+										style="height:300px;position: relative;">
+										<table  class="table table-hover m-b-0">
+											<thead>
+												<tr>
+													<th><span>S.No</span></th>
+													<th><span>Course Id <a class="help"
+															data-toggle="popover" title="Course Id "
+															data-content="The unique identifier for the course"><i
+																class="feather icon-help-circle f-16"></i></a></span></th>
+													<th><span>Course Name <a class="help"
+															data-toggle="popover" title="Course Name"
+															data-content="The name of the course"><i
+																class="feather icon-help-circle f-16"></i></a></span></th>
+													<th><span>Attempt Id <a class="help"
+															data-toggle="popover" title="Attempt Id"
+															data-content="The unique identifier for attempts"><i
+																class="feather icon-help-circle f-16"></i></a></span></th>
+													<th><span>Mark <a class="help"
+															data-toggle="popover" title="Mark"
+															data-content="The marks scored by the candidate"><i
+																class="feather icon-help-circle f-16"></i></a></span></th>
+													<th><span>Grade <a class="help"
+															data-toggle="popover" title="Grade"
+															data-content="The corresponding grade for the obtained mark"><i
+																class="feather icon-help-circle f-16"></i></a></span></th>
+													<th><span>Remarks <a class="help"
+															data-toggle="popover" title="Remarks"
+															data-content="Faculty remarks for the student"><i
+																class="feather icon-help-circle f-16"></i></a></span></th>
+													<th><span>Suggested Courses <a class="help"
+															data-toggle="popover" title="Suggested Courses"
+															data-content="Courses suggested by the faculty"><i
+																class="feather icon-help-circle f-16"></i></a></span></th>
+													<th><span>Mentor <a class="help"
+															data-toggle="popover" title="Mentor"
+															data-content="This column contains if the candidate 
+															is assigned as a mentor for the  course."><i
+																class="feather icon-help-circle f-16"></i></a></span></th>
+													<th><span>Mentee <a class="help"
+															data-toggle="popover" title="Mentee"
+															data-content="This column contains the id and name of the candidates(s)
+															who are under the mentorship of the candidate."><i
+																class="feather icon-help-circle f-16"></i></a></span></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>
+														<h6>
+															<span class="badge badge-info">FP2021JP</span>
+														</h6>
+													</td>
+													<td><h6>
+															Java Programming
+														</h6>
+														</td>
+													<td><h6>
+															<span class="badge badge-warning">AT1000221</span>
+														</h6>
+													</td>
+													<td>70%
+														<div class="progress mt-1" style="height: 4px;">
+															<div class="progress-bar bg-success rounded"
+																role="progressbar" style="width: 70%;"
+																aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+														</div>
+													</td>
+													<td><h5>
+														<span class="badge badge-light-primary">A</span>
+														</h5>
+													</td>
+													<td><p class="text-dark mb-1">
+														Well Done
+														</p>
+													</td>
+													<td><p class="text-dark mb-1">--</p></td>
+													<td><p class="text-dark mb-1">--</p></td>
+													<td><h5 class="badge badge-light-warning text-dark mb-1"><b>Id:</b> 125486</h5><br>
+														<h5 class="badge badge-light-warning text-dark mb-1"><b>Name:</b> K.Ramakrishnan</h5></td>
+
+												</tr>
+													<tr>
+													<td>2</td>
+													<td>
+														<h6>
+															<span class="badge badge-info">FP2021MN</span>
+														</h6>
+													</td>
+													<td><h6>
+															Analytical 
+														</h6>
+														</td>
+													<td><h6>
+															<span class="badge badge-warning">AT1000427</span>
+														</h6>
+													</td>
+													<td>10%
+														<div class="progress mt-1" style="height: 4px;">
+															<div class="progress-bar bg-danger rounded"
+																role="progressbar" style="width: 10%;"
+																aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+														</div>
+													</td>
+													<td><h5>
+														<span class="badge badge-light-danger">F</span>
+														</h5>
+													</td>
+													<td><p class="text-dark mb-1">
+														Needs Improvement
+														</p>
+													</td>
+													<td><p class="text-dark mb-1">--</p></td>
+													<td><h5 class="badge badge-light-success text-dark mb-1"><b>Id:</b> 125468</h5><br>
+														<h5 class="badge badge-light-success text-dark mb-1"><b>Name:</b> D.John Victor</h5>
+														</td>
+													<td><p class="text-dark mb-1">--</p>
+														<p class="text-dark mb-1"></p></td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>
+														<h6>
+															<span class="badge badge-info">FP2021VB</span>
+														</h6>
+													</td>
+													<td><h6>
+															Verbal & Reasoning
+														</h6>
+														</td>
+													<td><h6>
+															<span class="badge badge-warning">AT1000235</span>
+														</h6>
+													</td>
+													<td>30%
+														<div class="progress mt-1" style="height: 4px;">
+															<div class="progress-bar bg-danger rounded"
+																role="progressbar" style="width: 30%;"
+																aria-valuenow=30 aria-valuemin="0" aria-valuemax="100"></div>
+														</div>
+													</td>
+													<td><h5>
+														<span class="badge badge-light-danger">F</span>
+														</h5>
+													</td>
+													<td><p class="text-dark mb-1">
+														Needs Improvement
+														</p>
+													</td>
+													<td><p class="text-dark mb-1">--</p></td>
+													<td><h5 class="badge badge-light-success text-dark mb-1"><b>Id:</b> 125694</h5><br>
+														<h5 class="badge badge-light-success text-dark mb-1"><b>Name:</b> A.Arul</h5></td>
+													<td><p class="text-dark mb-1">--</p>
+														<p class="text-dark mb-1"></p></td>
+
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Customer overview end -->
+			<!-- Performance chart start -->
+
+			<div class="col-lg-4 col-xl-4">
+
+				<div class="card">
+					<div class="card-body bg-patern">
+						<div class="col-auto">
+							<b>Performance Statistics</b>
+						</div>
+						<div id="pie-chart"></div>
+					</div>
+				</div>
+
+			</div>
+			
+			<div class="col-lg-4 col-xl-4">
+
+				<div class="card">
+					<div class="card-body bg-patern">
+						<div class="col-auto">
+							<b>Strengths & Weakness</b>
+						</div><br>
+						<div id="radar-chart"></div>
+					</div>
+				</div>
+
+			</div>
+			<!-- Performance chart end -->
+         <!-- Strength chart start -->
+         
+			<div class="col-md-12 col-xl-12">
+				<div class="card ">
+					<div class="card-header">
+						<h5 style="text-transform: uppercase;">My Progress</h5>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+						<table id="simpletable" class="table table-hover">
+								<thead>
+									<tr>
+										<th><span>S.No</span></th>
+										<th><span>Course Id </span></th>
+										<th><span>Course Name </span></th>
+										<th><span>Assigned On</span></th>
+										<th><span>Expected Date of Completion</span></th>
+										<th><span>Target</span></th>
+										<th><span>Status</span></th>
+										<th><span>Score</span></th>
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td>AP1254VB</td>
+										<td>Verbal Vocabulary</td>
+										<td>date</td>
+										<td>date</td>
+										<td>70%</td>
+										<td><span class="badge badge-light-info">In
+												Progress</span></td>
+										<td>60%</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>AP1254VB</td>
+										<td>Verbal Vocabulary</td>
+										<td>date</td>
+										<td>date</td>
+										<td>70%</td>
+										<td><span class="badge badge-light-info">In
+												Progress</span></td>
+										<td>60%</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>AP1254VB</td>
+										<td>Verbal Vocabulary</td>
+										<td>date</td>
+										<td>date</td>
+										<td>70%</td>
+										<td><span class="badge badge-light-info">In
+												Progress</span></td>
+										<td>60%</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>AP1254VB</td>
+										<td>Verbal Vocabulary</td>
+										<td>date</td>
+										<td>date</td>
+										<td>70%</td>
+										<td><span class="badge badge-light-info">In
+												Progress</span></td>
+										<td>60%</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>AP1254VB</td>
+										<td>Verbal Vocabulary</td>
+										<td>date</td>
+										<td>date</td>
+										<td>70%</td>
+										<td><span class="badge badge-light-info">In
+												Progress</span></td>
+										<td>60%</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Strength chart end -->
+		<!-- [ dashboard ] end -->
+		</div>
+		<!-- [ Main Content ] end -->
+	</div>
+</div>
+<!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script src="/static/assets/js/plugins/apexcharts.min.js"></script>
+    <script src="/static/assets/js/pages/candidate-chart.js"></script>
+    <script src="/static/assets/js/pages/dashboard-main.js"></script>
+  	<script src="/static/assets/js/pages/data-basic-custom.js"></script>
+  	<script>
+
+  	$(document).ready(function() {
+  		
+  		setTimeout(function() {
+  			
+  			$(function() {
+  	            var options = {
+  	                chart: {
+  	                    height: 310,
+  	                    type: 'radar',
+  	                  toolbar: {
+  	                    show: false
+  	                  }
+  	                },
+  	                series: [{
+  	                    name: '',
+  	                    data: [70, 20, 10],
+  	                }],
+  	                labels: ['Programming Skills', 'Soft Skills', 'Analytical Skills' ],
+  	                plotOptions: {
+  	                    radar: {
+  	                        size: 120,
+  	                        polygons: {
+  	                            strokeColor: '#f3f6ff',
+  	                            fill: {
+  	                                colors: ['#f3f6ff', '#fff']
+  	                            }
+  	                        }
+  	                    },
+  	                    
+  	                },
+  	              dataLabels: {
+  	            	  enabled: true,
+  	            	 style: {
+  	            	      fontSize: '14px',
+  	            	      fontFamily: 'Helvetica, Arial, sans-serif',
+  	            	      fontWeight: 'bold',
+  	            	      colors: ["#000"]
+  	            	  },
+  	            	 borderRadius:2,
+  	              },
+  	                colors: ["#00bcd4"],
+  	                markers: {
+  	                    size: 4,
+  	                    colors: ['#fff'],
+  	                    strokeColor: '#FF5370',
+  	                    strokeWidth: 2,
+  	                },
+  	                fill: {
+  	                    type: 'gradient',
+  	                    gradient: {
+  	                        shade: 'light',
+  	                        type: 'vertical',
+  	                        shadeIntensity: 0.25,
+  	                        inverseColors: true,
+  	                        opacityFrom: 0.5,
+  	                        opacityTo: 0.7,
+  	                        stops: [40, 100]
+  	                    }
+  	                },
+  	                tooltip: {
+  	                    y: {
+  	                        formatter: function(val) {
+  	                            return val > 70 ? "Strong: "+val : "Weak: "+val;
+  	                        }
+  	                    }
+  	                },
+  	                yaxis: {
+  	                    tickAmount: 7,
+  	                    labels: {
+  	                        formatter: function(val, i) {
+  	                            if (i % 2 === 0) {
+  	                                return val
+  	                            } else {
+  	                                return ''
+  	                            }
+  	                        }
+  	                    }
+  	                }
+  	            }
+  	            var chart = new ApexCharts(
+  	                document.querySelector("#radar-chart"),
+  	                options
+  	            );
+  	            chart.render();
+  	        });
+  		}, 700);
+  	});
+  	</script>
+{% endblock javascripts %}

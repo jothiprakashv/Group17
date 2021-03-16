@@ -1,0 +1,115 @@
+{% extends "layouts/faculty-base.html" %} {% block title %} Suggest Courses
+{% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+	<div class="pcoded-content">
+
+		<!-- [ breadcrumb ] start -->
+		<div class="page-header">
+			<div class="page-block">
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<div class="page-header-title">
+							<h5 class="m-b-10">Analysis Report</h5>
+						</div>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="dashboard"><i
+									class="feather icon-home"></i></a></li>
+							<li class="breadcrumb-item"><a href="#!">Analysis Report</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- [ breadcrumb ] end -->
+		<!-- [ Main Content ] start -->
+		
+		<div class="col-xl-12">
+			<div class="card">
+				<form id="fetch-form" method="post" action="fetch-report/">
+					{% csrf_token %}
+					<div class="card-header table-card-header">
+						<button type="submit" class="btn event-btn m-2 btn-danger" name="fetch-data">
+							<i class="feather mr-2 icon-anchor"></i><span
+								class="spinner-grow spinner-grow-sm" role="status"></span> <span
+								class="load-text">Fetching...</span> <span class="btn-text">Fetch
+								Report </span>
+						</button>
+					</div>
+				</form>
+				<div class="card-body">
+				<h5>Analysis Report</h5>
+					<table id="basic-btn"
+						class="table table-striped ">
+						
+						<thead>
+							<tr>
+								<th>S.No</th>
+								<th>Course Category</th>
+								<th>Date of Suggestion</th>
+								<th>Candidate ID</th>
+								<th>Candidate Name</th>
+								<th>Suggested Course</th>
+								<th>Course Duration</th>
+								<th>Attempt ID</th>
+								<th>Suggested Mentor</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Technical Skills</td>
+								<td>10/02/2021</td>
+								<td>CPRT1005</td>
+								<td>Arun</td>
+								<td>Python Programming</td>
+								<td>45 HOURS</td>
+								<td>CPRTA001</td>
+								<td>A.Krishna - CPRT10015</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Communication Skills</td>
+								<td>10/02/2021</td>
+								<td>CPRT1005</td>
+								<td>S.Kannan</td>
+								<td>Django Framework</td>
+								<td>30 HOURS</td>
+								<td>CPRTA001</td>
+								<td>A.Kerthana - CPRT10016</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Analytical Skills</td>
+								<td>10/02/2021</td>
+								<td>CPRT1005</td>
+								<td>K.Mani</td>
+								<td>Spring Framework</td>
+								<td>40 HOURS</td>
+								<td>CPRTA001</td>
+								<td>K.Kanna - CPRT10016</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- [ Main Content ] end -->
+		
+		
+	</div>
+	
+</div>
+<!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
+	

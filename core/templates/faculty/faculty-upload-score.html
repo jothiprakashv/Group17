@@ -1,0 +1,171 @@
+{% extends "layouts/faculty-base.html" %} {% block title %} Score Sheet
+{% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+	<div class="pcoded-content">
+		<!-- [ breadcrumb ] start -->
+		<div class="page-header">
+			<div class="page-block">
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<div class="page-header-title">
+							<h5 class="m-b-10">Score Sheet</h5>
+						</div>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="dashboard"><i
+									class="feather icon-home"></i></a></li>
+							<li class="breadcrumb-item"><a href="#!">Upload Score Sheet</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- [ breadcrumb ] end -->
+		<!-- [ Main Content ] start -->
+		<div class="col-sm-12">
+			<div class="card">
+				<div class="card-header">
+					<h5>Upload Candidate's Performance Details</h5>
+					<hr>
+					<div class="row">
+						<div class="col-md-6">
+							<form id="upload-form" method="post" enctype="multipart/form-data" action="upload-data/">
+								{% csrf_token %}
+								<div class="form-group">
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text"> File to upload:</span>
+										</div>
+										<div class="custom-file">
+											<input type="file" name="document" class="custom-file-input"
+												id="inputGroupFile01" required="required"
+												accept=".csv"> 
+												<label
+												class="custom-file-label" for="inputGroupFile01"></label>
+										</div>
+										
+									</div>
+									<span class="text-muted">click here to download the template
+										
+										<a class="breadcrumb-item" href="/static/assets/files/CPART_scoresheet_template.csv">.csv</a>
+									</span>
+								</div>
+								<button id="upload-btn" type="submit" name="upload-file" class="btn btn-info">Upload Data</button>
+							</form>
+						</div>
+
+					</div>
+					<!-- [ sample-page ] end -->
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xl-12">
+			<div class="card">
+				<div class="card-header">
+					<h5>Overall Performance Details</h5>
+				</div>
+				<div class="card-body">
+					<div class="table-responsive">
+						<table id="basic-btn" class="table table-striped">
+							<thead>
+								<tr >
+									<th>S.No</th>
+									<th>CANDIDATE ID</th>
+									<th>CANDIDATE NAME</th>
+									<th>GENDER</th>
+									<th>CANDIDATE EMAIL</th>
+									<th>COURSE CATEGORY</th>
+									<th>COURSE NAME</th>
+									<th>COURSE ID</th>
+									<th>ATTEMPT ID</th>
+									<th>MARKS</th>
+									<th>GRADE</th>
+
+								</tr>
+							</thead>
+							<tbody>
+							{% if scores %}
+							{% for score in scores %}
+								<tr>
+									<td> {{ forloop.counter }}</td>
+									<td>{{ score.candidate_id }}</td>
+									<td>{{ score.candidate_name }}</td>
+									<td>{{ score.gender }}</td>
+									<td>{{ score.candidate_email }}</td>
+									<td>{{ score.course_category }}</td>
+									<td>{{ score.course_name }}</td>
+									<td>{{ score.course_id }}</td>
+									<td>{{ score.attempt_id }}</td>
+									<td>{{ score.mark }}</td>
+									<td>{{ score.grade }}</td>
+								</tr>
+							{% endfor %}
+							{% endif %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		<!-- [ Main Content ] end -->
+	</div>
+</div>
+<!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+	jQuery(function($) {
+	    $('#upload-form').on('submit', function(e) {
+	    	$(this).find('.btn').addClass('event-btn m-2');
+	    	 $(this).find('#upload-btn').attr("disabled","disabled")
+	        $(this).find('#upload-btn')
+	           .html('<span class="spinner-grow spinner-grow-sm" role="status"></span><span class="load-text">Uploading...</span>');
+	    });
+	});
+	</script>
+	{% if msg %}
+<script>
+	var msg = "{{msg}}";
+	var value = "{{value}}";
+	$(window).on('load', function() {
+		function notify(message, type) {
+			$.notify({
+				message : message
+			}, {
+				type : type,
+				allow_dismiss : false,
+				label : 'Cancel',
+				className : 'btn-xs btn-btn-success',
+				placement : {
+					from : 'top',
+					align : 'right'
+				},
+				delay : 2500,
+				animate : {
+					enter : 'animated fadeInRight',
+					exit : 'animated fadeOutRight'
+				},
+				offset : {
+					x : 30,
+					y : 30
+				}
+			});
+		}
+		;
+		if (msg)
+			notify(msg, value);
+	});
+</script>
+
+{% endif %}
+{% endblock javascripts %}
