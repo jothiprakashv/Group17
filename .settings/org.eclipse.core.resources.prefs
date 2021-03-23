@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//app/__init__.py=utf-8
+encoding//app/admin.py=utf-8
+encoding//app/config.py=utf-8
+encoding//app/models.py=utf-8
+encoding//app/tests.py=utf-8
+encoding//app/urls.py=utf-8
+encoding//app/views.py=utf-8
+encoding//authentication/admin.py=utf-8
+encoding//authentication/config.py=utf-8
+encoding//authentication/forms.py=utf-8
+encoding//authentication/migrations/__init__.py=utf-8
+encoding//authentication/models.py=utf-8
+encoding//authentication/tests.py=utf-8
+encoding//authentication/urls.py=utf-8
+encoding//authentication/views.py=utf-8
+encoding//scoresheet/urls.py=utf-8

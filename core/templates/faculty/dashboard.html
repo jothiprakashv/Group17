@@ -1,0 +1,408 @@
+{% extends "layouts/faculty-base.html" %}
+
+{% block title %}My Dashboard
+{% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}	
+
+	<!-- [ Main Content ] start -->
+	<div class="pcoded-main-container">
+		<div class="pcoded-content">
+			<!-- [ breadcrumb ] start -->
+			<div class="page-header">
+				<div class="page-block">
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<div class="page-header-title">
+								<h5 class="m-b-10">My Dashboard</h5>
+							</div>	
+							<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="dashboard"><i
+									class="feather icon-home"></i></a></li>
+							<li class="breadcrumb-item"><a href="#!">My Dashboard</a></li>
+						</ul>						
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- [ breadcrumb ] end -->
+			<!-- [ Main Content ] start -->
+				<div class="row">
+			<!-- [ dashboard ] start -->
+			<!-- Candidate overview start -->
+			<div class="col-md-12 col-xl-12">
+				<div class="card ">
+					<div class="card-header">
+						<h5 style="text-transform: uppercase;">Overall Class Performance</h5>
+					
+					</div>
+					<div class="card-body ">
+						<div class="table-responsive ">
+							<div class="customer-scroll"
+								style=" position: relative;">
+								<table id="simpletable2"
+									class="table table-hover ">
+									<thead>
+										<tr>
+											<th><span>S.No</span></th>
+											<th><span>Candidate Id <a class="help"
+													data-toggle="popover" title="Course Id "
+													data-content="The unique identifier for the candidate"><i
+														class="feather icon-help-circle f-16"></i></a></span></th>
+											<th><span>Candidate Name <a class="help"
+													data-toggle="popover" title="Course Id "
+													data-content="The name of the candidate"><i
+														class="feather icon-help-circle f-16"></i></a></span></th>
+											<th><span>Course Id <a class="help"
+													data-toggle="popover" title="Course Id "
+													data-content="The unique identifier for the course"><i
+														class="feather icon-help-circle f-16"></i></a></span></th>
+											<th><span>Course Name <a class="help"
+													data-toggle="popover" title="Course Name"
+													data-content="The name of the course"><i
+														class="feather icon-help-circle f-16"></i></a></span></th>
+											<th><span>Attempt Id <a class="help"
+													data-toggle="popover" title="Attempt Id"
+													data-content="The unique identifier for attempts"><i
+														class="feather icon-help-circle f-16"></i></a></span></th>
+											<th><span>Mark <a class="help"
+													data-toggle="popover" title="Mark"
+													data-content="The marks scored by the candidate"><i
+														class="feather icon-help-circle f-16"></i></a></span></th>
+											<th><span>Grade <a class="help"
+													data-toggle="popover" title="Grade"
+													data-content="The corresponding grade for the obtained mark"><i
+														class="feather icon-help-circle f-16"></i></a></span></th>
+											
+										</tr>
+									</thead>
+									<tbody>
+									{% if score_sheets %}
+									{% for score_sheet in score_sheets %}
+										<tr>
+											<td>{{ forloop.counter }}</td>
+											<td>
+												
+													<span>{{ score_sheet.candidate_id }}</span>
+												
+											</td>
+											<td>
+												
+													<span>{{ score_sheet.candidate_name }}</span>
+												
+											</td>
+											<td>
+												
+													<span class="badge badge-info">{{ score_sheet.course_id }}</span>
+												
+											</td>
+											<td>{{ score_sheet.course_name }}</td>
+											<td><h6>
+													<span class="badge badge-warning">{{ score_sheet.attempt_id }}</span>
+												</h6></td>
+											<td>{{ score_sheet.mark }}%
+												<div class="progress mt-1" style="height: 4px;">
+													<div class="progress-bar {% if score_sheet.grade == 'B' %} bg-primary {% endif %}
+													{% if score_sheet.grade == 'A' %} bg-success {% endif %}
+													{% if score_sheet.grade == 'C' %} bg-warning {% endif %}
+													{% if score_sheet.grade == 'D' %} bg-danger {% endif %} rounded"
+														role="progressbar" style="width:{{score_sheet.mark|cut:' '}}%" aria-valuenow="{{ score_sheet.mark }}"
+														aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+											</td>
+											<td><h5>
+													<span class="badge {% if score_sheet.grade == 'B' %} badge-light-primary {% endif %}
+													{% if score_sheet.grade == 'A' %} badge-light-success {% endif %}
+													{% if score_sheet.grade == 'C' %} badge-light-warning {% endif %}
+													{% if score_sheet.grade == 'D' %} badge-light-danger {% endif %}
+													 ">{{ score_sheet.grade }}</span>
+												</h5>
+											</td>
+										</tr>
+										{% endfor %}
+										{% endif %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Customer overview end -->
+			<!-- Performance chart start -->
+
+			<div class="col-lg-4 col-xl-4">
+
+				<div class="card">
+					<div class="card-body bg-patern">
+						<div class="col-auto">
+							<b>Overall Class Performance Statistics</b>
+						</div>
+						<div id="pie-chart"></div>
+					</div>
+				</div>
+
+			</div>
+			
+			<div class="col-lg-4 col-xl-4">
+
+				<div class="card">
+					<div class="card-body bg-patern">
+						<div class="col-auto">
+							<b>Class Strengths & Weakness</b>
+						</div><br>
+						<div id="radar-chart"></div>
+					</div>
+				</div>
+
+			</div>
+			<!-- Performance chart end -->
+			
+			
+         <!-- Strength chart start -->
+         
+			<div class="col-md-12 col-xl-12">
+				<div class="card ">
+					<div class="card-header">
+						<h5 style="text-transform: uppercase;">Overall Class Progress</h5>
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+						<table id="simpletable3" class="table table-hover">
+								<thead>
+									<tr>
+										<th><span>S.No</span></th>
+										<th><span>Candidate Id </span></th>
+										<th><span>Candidate Name </span></th>
+										<th><span>Suggested Course Id </span></th>
+										<th><span>Suggested Course Name </span></th>
+										<th><span>Suggested Course Category </span></th>
+										<th><span>Assigned On</span></th>
+										<th><span>Mentor </span></th>	
+										<th><span>Status</span></th>
+
+									</tr>
+								</thead>
+								<tbody>
+								{% if suggested_courses %}
+								{% for suggested_course in suggested_courses %}
+									<tr>
+										<td>{{ forloop.counter }}</td>
+										<td>{{ suggested_course.candidate_id }}</td>
+										<td>{{ suggested_course.candidate_name}}</td>
+										<td>{{ suggested_course.suggested_course_id}}</td>
+										<td><a class="breadcrumb-item" href="{{suggested_course.suggested_course_url}}">{{ suggested_course.suggested_course_name }}</a> </td>
+										<td>{{ suggested_course.course_category}}</td>
+										<td>{{ suggested_course.assigned_on | date:'d-m-Y' }}</td>
+										<td><h5 class="badge badge-light-warning text-dark mb-1"><b>Id:</b> {{ suggested_course.suggested_mentor_id }}</h5><br>
+											<h5 class="badge badge-light-warning text-dark mb-1"><b>Name:</b> {{ suggested_course.suggested_mentor_name }}</h5> </td>
+										<td><span class="badge {% if suggested_course.status == 'Assigned' %} badge-light-danger {% endif %}
+										{% if suggested_course.status == 'In Progress' %} badge-light-warning {% endif %}
+										{% if suggested_course.status == 'Completed' %} badge-light-success {% endif %}
+										">{{ suggested_course.status }}</span>
+										</td>
+									</tr>
+								{% endfor %}
+								{% endif %}
+								
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Strength chart end -->
+		<!-- [ dashboard ] end -->
+		</div>
+	
+			<!-- [ Main Content ] end -->
+		</div>
+	</div>
+	<!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+ 	<script src="/static/assets/js/plugins/apexcharts.min.js"></script>
+    <script src="/static/assets/js/pages/dashboard-main.js"></script>
+  	<script src="/static/assets/js/pages/data-basic-custom.js"></script>
+
+  	<script>
+  	//Donut chart
+  	'use strict';
+  	let chartData = {{ chart|safe }};
+  	var skill1 = chartData[0] ? chartData[0] : 0;
+  	var skill2 = chartData[1] ? chartData[1] : 0;
+  	var skill3 = chartData[2] ? chartData[2] : 0;
+  	
+	
+		
+  	$(document).ready(function() {
+		
+		setTimeout(function() {
+			$(function() {
+				var options = {
+					chart: {
+						height: 360,
+						type: 'donut',
+					},
+	
+					labels: ['Programing Skills', 'Soft Skills', 'Analytical Skills'],
+					series: [skill1, skill2, skill3],
+					colors: ["#00bcd4", "#FFB64D", "#FF5370"],
+					legend: {
+						show: true,
+						position: 'bottom',
+						fontSize: '14px',
+					},
+					fill: {
+						type: 'solid',
+						gradient: {
+							shade: 'light',
+							
+						}
+					},
+					dataLabels: {
+						enabled: false,
+						formatter: function(val) {
+							return Math.ceil(val) + "%";
+						},
+						dropShadow: {
+							enabled: false,
+						},
+	
+					},
+					plotOptions: {
+						pie: {
+							donut: {
+								labels: {
+									show: true,
+									name: {
+										show: true
+									},
+									value: {
+										show: true,
+										formatter: function(val) {
+											return Math.ceil(val) + "%";
+										},
+									},
+									
+								}
+							}
+						}
+					},
+					responsive: [{
+						breakpoint: 480,
+						options: {
+							legend: {
+								position: 'bottom'
+							}
+						}
+					}]
+				}
+				var chart = new ApexCharts(
+					document.querySelector("#pie-chart"),
+					options
+				);
+				chart.render();
+			});
+			
+		
+		}, 700);
+	});
+
+ 	
+	//Radar chart
+  	$(document).ready(function() {
+  		setTimeout(function() {
+  			 $('#simpletable1').DataTable();
+  			$(function() {
+  	            var options = {
+  	                chart: {
+  	                    height: 310,
+  	                    type: 'radar',
+  	                  toolbar: {
+  	                    show: false
+  	                  }
+  	                },
+  	                series: [{
+  	                    name: '',
+  	                    data: [skill1, skill2, skill3],
+  	                }],
+  	                labels: ['Programming Skills', 'Soft Skills', 'Analytical Skills' ],
+  	                plotOptions: {
+  	                    radar: {
+  	                        size: 120,
+  	                        polygons: {
+  	                            strokeColor: '#f3f6ff',
+  	                            fill: {
+  	                                colors: ['#f3f6ff', '#fff']
+  	                            }
+  	                        }
+  	                    },
+  	                    
+  	                },
+  	              dataLabels: {
+  	            	  enabled: true,
+  	            	 style: {
+  	            	      fontSize: '14px',
+  	            	      fontFamily: 'Helvetica, Arial, sans-serif',
+  	            	      fontWeight: 'bold',
+  	            	      colors: ["#000"]
+  	            	  },
+  	            	 borderRadius:2,
+  	              },
+  	                colors: ["#00bcd4"],
+  	                markers: {
+  	                    size: 4,
+  	                    colors: ['#fff'],
+  	                    strokeColor: '#FF5370',
+  	                    strokeWidth: 2,
+  	                },
+  	                fill: {
+  	                    type: 'gradient',
+  	                    gradient: {
+  	                        shade: 'light',
+  	                        type: 'vertical',
+  	                        shadeIntensity: 0.25,
+  	                        inverseColors: true,
+  	                        opacityFrom: 0.5,
+  	                        opacityTo: 0.7,
+  	                        stops: [40, 100]
+  	                    }
+  	                },
+  	                tooltip: {
+  	                    y: {
+  	                        formatter: function(val) {
+  	                            return Math.ceil(val) >= 70 ? "Strong: "+Math.ceil(val) + "%" : "Weak: "+Math.ceil(val) + "%";
+  	                        }
+  	                    }
+  	                },
+  	                yaxis: {
+  	                    tickAmount: 7,
+  	                    labels: {
+  	                        formatter: function(val, i) {
+  	                            if (i % 2 === 0) {
+  	                                return val
+  	                            } else {
+  	                                return ''
+  	                            }
+  	                        }
+  	                    }
+  	                }
+  	            }
+  	            var chart = new ApexCharts(
+  	                document.querySelector("#radar-chart"),
+  	                options
+  	            );
+  	            chart.render();
+  	        });
+  		}, 700);
+  	});
+  	</script>
+{% endblock javascripts %}

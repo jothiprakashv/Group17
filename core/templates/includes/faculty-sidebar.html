@@ -1,0 +1,36 @@
+
+	<!-- [ navigation menu ] start -->
+	<nav class="pcoded-navbar menupos-fixed menu-light ">
+		<div class="navbar-wrapper  ">
+			<div class="navbar-content scroll-div " >
+				<ul class="nav pcoded-inner-navbar ">
+				{% if request.user.is_admin %}
+				<li class="nav-item">
+					    <a href="/admin/" class="nav-link ">
+                            <span class="pcoded-micon">
+                                <i class="feather icon-bar-chart"></i></span><span class="pcoded-mtext">Admin Dashboard</span></a>
+					</li>
+				{% endif %}
+					<li class="nav-item">
+					    <a href="/dashboard" class="nav-link ">
+                            <span class="pcoded-micon">
+                                <i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+					</li>
+					<li class="nav-item">
+					    <a href="/upload-scores" class="nav-link ">
+                            <span class="pcoded-micon">
+                                <i class="feather icon-box"></i></span><span class="pcoded-mtext">Upload Score Sheet</span></a>
+					</li>
+					<li class="nav-item">
+					    <a href="/suggest-courses" class="nav-link ">
+                            <span class="pcoded-micon">
+                                <i class="feather icon-gitlab"></i></span><span class="pcoded-mtext">Analysis Report</span></a>
+					</li>				
+
+				</ul>			
+				
+				
+			</div>
+		</div>
+	</nav>
+    <!-- [ navigation menu ] end -->

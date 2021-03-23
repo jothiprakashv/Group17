@@ -1,0 +1,105 @@
+﻿S.No,CANDIDATE ID,CANDIDATE NAME,GENDER,CANDIDATE EMAIL,COURSE NAME,COURSE ID,ATTEMPT ID,MARKS,GRADE,COURSE CATEGORY
+1,CPART1001,ABDUL MUKSITH S,Male,cpart1001@kce.ac.in,Java Programming,CPARTJP20,AT001,53,D,Programming
+2,CPART1002,ARAVINDHAN  S,Male,cpart1002@kce.ac.in,Java Programming,CPARTJP20,AT002,58,D,Programming
+3,CPART1003,DHINESH KUMAR N,Male,cpart1003@kce.ac.in,Java Programming,CPARTJP20,AT003,75,C,Programming
+4,CPART1004,MANIKANDAN V,Male,cpart1004@kce.ac.in,Java Programming,CPARTJP20,AT004,69,D,Programming
+5,CPART1005,MOHAMMED IMRAN K S,Male,cpart1005@kce.ac.in,Java Programming,CPARTJP20,AT005,71,C,Programming
+6,CPART1006,MUKESH RAJA K,Male,cpart1006@kce.ac.in,Java Programming,CPARTJP20,AT006,76,B,Programming
+7,CPART1007,SUJITH M,Male,cpart1007@kce.ac.in,Java Programming,CPARTJP20,AT007,65,D,Programming
+8,CPART1008,ARAVIND KUMAR V S,Male,cpart1008@kce.ac.in,Java Programming,CPARTJP20,AT008,87,A,Programming
+9,CPART1009,GIRIVEL R,Male,cpart1009@kce.ac.in,Java Programming,CPARTJP20,AT009,79,B,Programming
+10,CPART1010,GOWTHAM G M,Male,cpart1010@kce.ac.in,Java Programming,CPARTJP20,AT010,89,A,Programming
+11,CPART1011,SIVANESH M,Male,cpart1011@kce.ac.in,Technical English,CPARTTE20,AT011,65,D,Communication
+12,CPART1012,DHINESH D,Male,cpart1012@kce.ac.in,Technical English,CPARTTE20,AT012,93,A,Communication
+13,CPART1013,SAI HARI P,Male,cpart1013@kce.ac.in,Technical English,CPARTTE20,AT013,76,B,Communication
+14,CPART1014,UDHAYA KRISHNA M,Male,cpart1014@kce.ac.in,Technical English,CPARTTE20,AT014,87,A,Communication
+15,CPART1015,VINEETH K,Male,cpart1015@kce.ac.in,Technical English,CPARTTE20,AT015,76,B,Communication
+16,CPART1016,ABINAYA R,Female,cpart1016@kce.ac.in,Technical English,CPARTTE20,AT016,81,A,Communication
+17,CPART1017,ARAVINTH V,Male,cpart1017@kce.ac.in,Technical English,CPARTTE20,AT017,90,A,Communication
+18,CPART1018,ARUN G,Male,cpart1018@kce.ac.in,Technical English,CPARTTE20,AT018,63,D,Communication
+19,CPART1019,DHIVYA T,Female,cpart1019@kce.ac.in,Technical English,CPARTTE20,AT019,90,A,Communication
+20,CPART1020,GANESH B,Male,cpart1020@kce.ac.in,Python Programming,CPARTPY20,AT020,75,C,Programming
+21,CPART1021,JEEVA SUDHAN K,Male,cpart1021@kce.ac.in,Python Programming,CPARTPY20,AT021,78,B,Programming
+22,CPART1022,MAHESH RAJ S K,Male,cpart1022@kce.ac.in,Python Programming,CPARTPY20,AT022,64,D,Programming
+23,CPART1023,MARISELVAM K,Male,cpart1023@kce.ac.in,Python Programming,CPARTPY20,AT023,59,D,Programming
+24,CPART1024,MEENA K,Female,cpart1024@kce.ac.in,Python Programming,CPARTPY20,AT024,78,B,Programming
+25,CPART1025,MOHAMED IBRAHIM M,Male,cpart1025@kce.ac.in,Python Programming,CPARTPY20,AT025,75,C,Programming
+26,CPART1026,PRIYADHARSHINI C,Female,cpart1026@kce.ac.in,Python Programming,CPARTPY20,AT026,73,C,Programming
+27,CPART1027,RAGUL K,Male,cpart1027@kce.ac.in,Python Programming,CPARTPY20,AT027,63,D,Programming
+28,CPART1028,RAJALAKSHMI J,Female,cpart1028@kce.ac.in,Python Programming,CPARTPY20,AT028,90,A,Programming
+29,CPART1029,SIVABALAN M,Male,cpart1029@kce.ac.in,Deep Learning,CPARTDO20,AT029,83,A,Analytics
+30,CPART1030,VASANTHA KUMAR R,Male,cpart1030@kce.ac.in,Deep Learning,CPARTDO20,AT030,86,A,Analytics
+31,CPART1031,ABISHEK S J,Male,cpart1031@kce.ac.in,Deep Learning,CPARTDO20,AT031,66,D,Analytics
+32,CPART1032,BUVAN PRANESH K T,Male,cpart1032@kce.ac.in,Deep Learning,CPARTDO20,AT032,70,D,Analytics
+33,CPART1033,DHIVYA BHARATHI T K,Male,cpart1033@kce.ac.in,Deep Learning,CPARTDO20,AT033,62,D,Analytics
+34,CPART1034,HARI KAARTHIK S,Male,cpart1034@kce.ac.in,Deep Learning,CPARTDO20,AT034,46,D,Analytics
+35,CPART1035,KEERTHANA B,Female,cpart1035@kce.ac.in,Deep Learning,CPARTDO20,AT035,86,A,Analytics
+36,CPART1036,RAGUL R,Male,cpart1036@kce.ac.in,Deep Learning,CPARTDO20,AT036,62,D,Analytics
+37,CPART1037,RAMANATHAN S K S,Male,cpart1037@kce.ac.in,Deep Learning,CPARTDO20,AT037,63,D,Analytics
+38,CPART1038,SARAVANAN P,Male,cpart1038@kce.ac.in,Deep Learning,CPARTDO20,AT038,88,A,Analytics
+39,CPART1039,SWETHA J,Female,cpart1039@kce.ac.in,Deep Learning,CPARTDO20,AT039,73,C,Analytics
+40,CPART1040,ANISH N S,Male,cpart1040@kce.ac.in,Machine Learning,CPARTFD20,AT040,81,A,Programming
+41,CPART1041,ARAVIND C,Male,cpart1041@kce.ac.in,Machine Learning,CPARTFD20,AT041,64,D,Programming
+42,CPART1042,ARUNPRASATH P,Male,cpart1042@kce.ac.in,Machine Learning,CPARTFD20,AT042,72,C,Programming
+43,CPART1043,BLESSON KINGSLY S,Male,cpart1043@kce.ac.in,Machine Learning,CPARTFD20,AT043,63,D,Programming
+44,CPART1044,DHAMU K,Male,cpart1044@kce.ac.in,Machine Learning,CPARTFD20,AT044,80,B,Programming
+45,CPART1045,DINESHKUMAR R,Male,cpart1045@kce.ac.in,Machine Learning,CPARTFD20,AT045,83,A,Programming
+46,CPART1046,GOKUL ANANTH S,Male,cpart1046@kce.ac.in,Machine Learning,CPARTFD20,AT046,66,D,Programming
+47,CPART1047,HARI KRISHNA RAJU S,Male,cpart1047@kce.ac.in,Machine Learning,CPARTFD20,AT047,62,D,Programming
+48,CPART1048,HARIKRISHNAN D,Male,cpart1048@kce.ac.in,Machine Learning,CPARTFD20,AT048,80,B,Programming
+49,CPART1049,JERIN STANLEY DANIEL J,Male,cpart1049@kce.ac.in,Machine Learning,CPARTFD20,AT049,74,C,Programming
+50,CPART1050,KOWSHICK B,Male,cpart1050@kce.ac.in,Machine Learning,CPARTFD20,AT050,86,A,Programming
+51,CPART1051,NARESH R,Male,cpart1051@kce.ac.in,Web Design,CPARTA820,AT051,59,D,Programming
+52,CPART1052,NAVEENKUMAR M,Male,cpart1052@kce.ac.in,Web Design,CPARTA820,AT052,29,D,Programming
+53,CPART1053,NIRMALKUMAR S,Male,cpart1053@kce.ac.in,Web Design,CPARTA820,AT053,74,C,Programming
+54,CPART1054,PAVITHRAN M,Male,cpart1054@kce.ac.in,Web Design,CPARTA820,AT054,61,D,Programming
+55,CPART1055,PAVITHRANAYAKI G,Female,cpart1055@kce.ac.in,Web Design,CPARTA820,AT055,70,D,Programming
+56,CPART1056,PRADEEP K,Male,cpart1056@kce.ac.in,Web Design,CPARTA820,AT056,88,A,Programming
+57,CPART1057,PREM N,Male,cpart1057@kce.ac.in,Web Design,CPARTA820,AT057,62,D,Programming
+58,CPART1058,PRIYANKA M,Female,cpart1058@kce.ac.in,Web Design,CPARTA820,AT058,83,A,Programming
+59,CPART1059,RAGUL PRASHAD S,Male,cpart1059@kce.ac.in,Web Design,CPARTA820,AT059,71,C,Programming
+60,CPART1060,RANJITH RAJ K B,Male,cpart1060@kce.ac.in,Web Design,CPARTA820,AT060,74,C,Programming
+61,CPART1061,SABARINATH V,Male,cpart1061@kce.ac.in,Web Design,CPARTA820,AT061,62,D,Programming
+62,CPART1062,SAHANA ISHWARYA P,Female,cpart1062@kce.ac.in,Web Design,CPARTA820,AT062,91,A,Programming
+63,CPART1063,SARAVANAKUMAR K,Male,cpart1063@kce.ac.in,Data Analytics,CPARTDA20,AT063,53,D,Analytics
+64,CPART1064,SOUNDARYA A,Female,cpart1064@kce.ac.in,Data Analytics,CPARTDA20,AT064,77,B,Analytics
+65,CPART1065,SURYA VIJAYAN S,Male,cpart1065@kce.ac.in,Data Analytics,CPARTDA20,AT065,76,B,Analytics
+66,CPART1066,SUVETHA SHREE J P,Female,cpart1066@kce.ac.in,Data Analytics,CPARTDA20,AT066,78,B,Analytics
+67,CPART1067,VIDHYALAKSHMI P,Female,cpart1067@kce.ac.in,Data Analytics,CPARTDA20,AT067,63,D,Analytics
+68,CPART1068,VIGNESH KUMAR S,Male,cpart1068@kce.ac.in,Data Analytics,CPARTDA20,AT068,86,A,Analytics
+69,CPART1069,VIGNESH S,Male,cpart1069@kce.ac.in,Data Analytics,CPARTDA20,AT069,73,C,Analytics
+70,CPART1070,VIMAL C V,Male,cpart1070@kce.ac.in,Data Analytics,CPARTDA20,AT070,5,D,Analytics
+71,CPART1071,ANISH KUMAR,Male,cpart1071@kce.ac.in,Data Analytics,CPARTDA20,AT071,51,D,Analytics
+72,CPART1072,HARI OM PANDEY,Male,cpart1072@kce.ac.in,Data Analytics,CPARTDA20,AT072,51,D,Analytics
+73,CPART1073,AJITH S,Male,cpart1073@kce.ac.in,Data Analytics,CPARTDA20,AT073,65,D,Analytics
+74,CPART1074,ANGUSAMY R,Male,cpart1074@kce.ac.in,Data Analytics,CPARTDA20,AT074,84,A,Analytics
+75,CPART1075,BALACHANDRU S,Male,cpart1075@kce.ac.in,Data Analytics,CPARTDA20,AT075,80,B,Analytics
+76,CPART1076,BHARATH M,Male,cpart1076@kce.ac.in,Data Analytics,CPARTDA20,AT076,81,A,Analytics
+77,CPART1077,DHARSHAN N,Male,cpart1077@kce.ac.in,Data Science,CPARTDS20,AT077,73,C,Analytics
+78,CPART1078,GANESH KUMAR R,Male,cpart1078@kce.ac.in,Data Science,CPARTDS20,AT078,62,D,Analytics
+79,CPART1079,HARI HARAN R,Male,cpart1079@kce.ac.in,Data Science,CPARTDS20,AT079,74,C,Analytics
+80,CPART1080,KARPAGAVALLI,Male,cpart1080@kce.ac.in,Data Science,CPARTDS20,AT080,77,B,Analytics
+81,CPART1081,KARTHIKRAJA L,Male,cpart1081@kce.ac.in,Data Science,CPARTDS20,AT081,75,C,Analytics
+82,CPART1082,MAHESH A,Male,cpart1082@kce.ac.in,Data Science,CPARTDS20,AT082,12,D,Analytics
+83,CPART1083,MARIVEL T,Male,cpart1083@kce.ac.in,Data Science,CPARTDS20,AT083,60,D,Analytics
+84,CPART1084,MOHAMED KAIF S,Male,cpart1084@kce.ac.in,Data Science,CPARTDS20,AT084,72,C,Analytics
+85,CPART1085,NANDHINI B,Male,cpart1085@kce.ac.in,Data Science,CPARTDS20,AT085,73,C,Analytics
+86,CPART1086,NAVEEN KUMAR S,Male,cpart1086@kce.ac.in,Data Science,CPARTDS20,AT086,60,D,Analytics
+87,CPART1087,NITHISHKUMAR S,Male,cpart1087@kce.ac.in,Data Science,CPARTDS20,AT087,91,A,Analytics
+88,CPART1088,NIVEDHA V,Male,cpart1088@kce.ac.in,Data Science,CPARTDS20,AT088,91,A,Analytics
+89,CPART1089,PAVITHRAN S,Male,cpart1089@kce.ac.in,Data Science,CPARTDS20,AT089,57,D,Analytics
+90,CPART1090,PAVITHIRASRI K,Male,cpart1090@kce.ac.in,Data Science,CPARTDS20,AT090,72,C,Analytics
+91,CPART1091,PRANAV R,Male,cpart1091@kce.ac.in,Data Science,CPARTDS20,AT091,87,A,Analytics
+92,CPART1092,PRANESH C,Male,cpart1092@kce.ac.in,Data Science,CPARTDS20,AT092,51,D,Analytics
+93,CPART1093,PRASANNA M,Male,cpart1093@kce.ac.in,Data Science,CPARTDS20,AT093,45,D,Analytics
+94,CPART1094,PRASANTH A,Male,cpart1094@kce.ac.in,Algorithms,CPARTAL20,AT094,59,D,Programming
+95,CPART1095,RAMPRABHU B,Male,cpart1095@kce.ac.in,Algorithms,CPARTAL21,AT095,60,D,Programming
+96,CPART1096,SABARESAN T,Male,cpart1096@kce.ac.in,Algorithms,CPARTAL22,AT096,80,B,Programming
+97,CPART1097,SAMIAPPAN J,Male,cpart1097@kce.ac.in,Algorithms,CPARTAL23,AT097,77,B,Programming
+98,CPART1098,SRI HARI VISHNU K,Male,cpart1098@kce.ac.in,Algorithms,CPARTAL24,AT098,66,D,Programming
+99,CPART1099,SRINANDHINI P S,Male,cpart1099@kce.ac.in,Algorithms,CPARTAL25,AT099,66,D,Programming
+100,CPART1100,SUTHANKUMAR J,Male,cpart1100@kce.ac.in,Algorithms,CPARTAL26,AT100,79,B,Programming
+101,CPART1101,VASAVI G,Male,cpart1101@kce.ac.in,Algorithms,CPARTAL27,AT101,72,C,Programming
+102,CPART1102,VEL RAJAN R,Male,cpart1102@kce.ac.in,Algorithms,CPARTAL28,AT102,50,D,Programming
+103,CPART1103,VIJAY R,Male,cpart1103@kce.ac.in,Algorithms,CPARTAL29,AT103,22,D,Programming
+104,CPART1104,YOGESH R,Male,cpart1104@kce.ac.in,Algorithms,CPARTAL30,AT104,89,A,Programming

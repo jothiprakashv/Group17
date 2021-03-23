@@ -1,0 +1,138 @@
+{% extends "layouts/faculty-base.html" %} {% block title %} Suggest Courses
+{% endblock %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+	<div class="pcoded-content">
+
+		<!-- [ breadcrumb ] start -->
+		<div class="page-header">
+			<div class="page-block">
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<div class="page-header-title">
+							<h5 class="m-b-10">Analysis Report</h5>
+						</div>
+						<ul class="breadcrumb">
+							<li class="breadcrumb-item"><a href="dashboard"><i
+									class="feather icon-home"></i></a></li>
+							<li class="breadcrumb-item"><a href="#!">Analysis Report</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- [ breadcrumb ] end -->
+		<!-- [ Main Content ] start -->
+		
+		<div class="col-xl-12">
+			<div class="card">
+				<form id="fetch-form" method="post" action="fetch-report/">
+					{% csrf_token %}
+					<div class="card-header table-card-header">
+						<button type="submit" class="btn event-btn m-2 btn-danger" name="fetch-data">
+							<i class="feather mr-2 icon-anchor"></i><span
+								class="spinner-grow spinner-grow-sm" role="status"></span> <span
+								class="load-text">Fetching...</span> <span class="btn-text">Fetch
+								Report </span>
+						</button>
+					</div>
+				</form>
+				<div class="card-body">
+				<h5>Analysis Report</h5>
+					<table id="basic-btn"
+						class="table table-striped table-responsive">
+						
+						<thead>
+							<tr>
+								<th>S.No</th>
+								<th>Course Id</th>
+								<th>Course Name</th>
+								<th>Course Category</th>
+								<th>Suggested Course </th>
+								<th>Duration</th>
+								<th>Candidate Id</th>
+								<th>Candidate Name</th>
+								<th>Mentor</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+						{% if suggested_courses %}
+							{% for suggested_course in suggested_courses %}
+							<tr>
+								<td>{{ forloop.counter }}</td>
+								<td><h6>
+										<span class="badge badge-info">{{ suggested_course.course_id }}</span>
+									</h6></td>
+								<td>{{ suggested_course.course_name }} </td>
+								<td>{{ suggested_course.course_category }} </td>
+								<td><a class="breadcrumb-item" href="{{suggested_course.suggested_course_url}}">{{ suggested_course.suggested_course_name }}</a> </td>
+								<td>{{ suggested_course.suggested_course_duration }} </td>
+								<td>{{ suggested_course.candidate_id }} </td>
+								<td>{{ suggested_course.candidate_name }} </td>
+								<td><h5 class="badge badge-light-warning text-dark mb-1"><b>Id:</b> {{ suggested_course.suggested_mentor_id }}</h5><br>
+									<h5 class="badge badge-light-warning text-dark mb-1"><b>Name:</b> {{ suggested_course.suggested_mentor_name }}</h5> </td>
+							</tr>
+							{% endfor %}
+						{% endif %}
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- [ Main Content ] end -->
+		
+		
+	</div>
+	
+</div>
+<!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+	{% if msg %}
+<script>
+	var msg = "{{msg}}";
+	var value = "{{value}}";
+	$(window).on('load', function() {
+		function notify(message, type) {
+			$.notify({
+				message : message
+			}, {
+				type : type,
+				allow_dismiss : false,
+				label : 'Cancel',
+				className : 'btn-xs btn-btn-success',
+				placement : {
+					from : 'top',
+					align : 'right'
+				},
+				delay : 2500,
+				animate : {
+					enter : 'animated fadeInRight',
+					exit : 'animated fadeOutRight'
+				},
+				offset : {
+					x : 30,
+					y : 30
+				}
+			});
+		}
+		;
+		if (msg)
+			notify(msg, value);
+	});
+</script>
+
+{% endif %}
+
+{% endblock javascripts %}
+	
